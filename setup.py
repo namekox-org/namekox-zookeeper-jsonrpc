@@ -17,7 +17,7 @@ readme = open(os.path.join(curdir, 'READIT.md'), 'rb', 'utf-8').read()
 
 setup(
     name='namekox-zookeeper-jsonrpc',
-    version='0.0.3',
+    version='0.0.4',
     description='namekox zookeeper jsonrpc',
     long_description=readme,
     long_description_content_type='text/markdown',

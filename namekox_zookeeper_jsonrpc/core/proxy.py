@@ -15,12 +15,12 @@ from namekox_jsonrpc.core.messaging import gen_message_headers
 
 
 class Proxy(object):
-    def __init__(self, service, protocol='http', timeout=None):
+    def __init__(self, service, protocol='http', timeout=3):
         self.service = service
         self.timeout = timeout
         self.protocol = protocol
 
-    def __call__(self, protocol='http', timeout=None):
+    def __call__(self, protocol='http', timeout=3):
         self.timeout = timeout
         self.protocol = protocol
 
