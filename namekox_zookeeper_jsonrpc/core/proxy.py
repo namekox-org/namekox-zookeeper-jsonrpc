@@ -12,15 +12,16 @@ from namekox_jsonrpc.constants import (
 )
 from namekox_jsonrpc.core.client import ServerProxy
 from namekox_jsonrpc.core.messaging import gen_message_headers
+from namekox_zookeeper_jsonrpc.constants import DEFAULT_PROXY_TIMEOUT
 
 
 class Proxy(object):
-    def __init__(self, service, protocol='http', timeout=3):
+    def __init__(self, service, protocol='http', timeout=DEFAULT_PROXY_TIMEOUT):
         self.service = service
         self.timeout = timeout
         self.protocol = protocol
 
-    def __call__(self, protocol='http', timeout=3):
+    def __call__(self, protocol='http', timeout=DEFAULT_PROXY_TIMEOUT):
         self.timeout = timeout
         self.protocol = protocol
 
