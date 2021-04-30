@@ -5,4 +5,4 @@
 from __future__ import unicode_literals
 
 
-DEFAULT_PROXY_TIMEOUT = 1
+DEFAULT_PROXY_TIMEOUT = 2
