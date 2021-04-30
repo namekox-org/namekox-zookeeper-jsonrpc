@@ -16,14 +16,14 @@ from namekox_zookeeper_jsonrpc.constants import DEFAULT_PROXY_TIMEOUT
 
 
 class Proxy(object):
-    def __init__(self, service, protocol='http', timeout=DEFAULT_PROXY_TIMEOUT):
+    def __init__(self, service, protocol='http', timeout=None):
         self.service = service
-        self.timeout = timeout
         self.protocol = protocol
+        self.timeout = timeout or DEFAULT_PROXY_TIMEOUT
 
-    def __call__(self, protocol='http', timeout=DEFAULT_PROXY_TIMEOUT):
-        self.timeout = timeout
+    def __call__(self, protocol='http', timeout=None):
         self.protocol = protocol
+        self.timeout = timeout or DEFAULT_PROXY_TIMEOUT
 
     def __getattr__(self, target_service):
         return Service(self, target_service)
